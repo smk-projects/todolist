@@ -1,0 +1,251 @@
+// 引用自定義變數
+@import './variables';
+
+// 引用 Bootstrap 5 核心檔案
+@import '~bootstrap/scss/bootstrap';
+
+// FontAwesome Icons
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';
+
+// 全域樣式
+body {
+    font-family: "Microsoft JhengHei", "微軟正黑體", $font-family-sans-serif;
+    background-color: $gray-300;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.todo-card {
+    transition:
+        transform 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+    border: none;
+    box-shadow: $card-box-shadow;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.todo-actions {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+
+    .btn {
+        padding: 0.25rem 0.5rem;
+        margin-left: 0.25rem;
+    }
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+}
+
+// 過期工作項目樣式
+.expired-todo {
+    opacity: 0.6;
+    background-color: #f8f9fa !important;
+    color: #6c757d !important;
+
+    .card-title {
+        color: #6c757d !important;
+    }
+
+    .card-text {
+        color: #868e96 !important;
+    }
+
+    .text-muted {
+        color: #adb5bd !important;
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    }
+}
+
+// 已完成工作項目樣式
+.completed-todo {
+    opacity: 0.8;
+
+    .card-title {
+        text-decoration: line-through;
+        color: #6c757d;
+    }
+
+    .card-text {
+        color: #6c757d;
+    }
+}
+
+// 已取消工作項目樣式
+.cancelled-todo {
+    opacity: 0.7;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+
+    .card-title {
+        text-decoration: line-through;
+        color: #856404;
+    }
+
+    .card-text {
+        color: #856404;
+    }
+
+    .text-muted {
+        color: #856404 !important;
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 0.25rem 0.5rem rgba(255, 193, 7, 0.15);
+    }
+}
+
+// 時間下拉選單樣式優化
+.time-select {
+    max-height: 200px;
+    overflow-y: auto;
+
+    option {
+        padding: 0.375rem 0.75rem;
+    }
+}
+
+// 為表單下拉選單添加最大高度
+.form-control select {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+// 手機版 Navbar 優化
+@media (max-width: 991.98px) {
+    .navbar {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.75rem;
+        margin-bottom: 0;
+    }
+
+    .input-group {
+        .form-control {
+            font-size: 16px; // 防止 iOS Safari 縮放
+        }
+    }
+
+    .btn {
+        white-space: nowrap;
+    }
+}
+
+// 手機版 Modal 和表單優化
+@media (max-width: 767.98px) {
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .modal-title {
+        font-size: 1.25rem;
+    }
+
+    // 提醒設定卡片樣式
+    .card {
+        .card-body {
+            padding: 0.75rem;
+        }
+    }
+
+    // 表單標籤優化
+    .form-label.small {
+        font-weight: 600;
+        color: #495057;
+    }
+
+    // 輸入框優化
+    .form-control,
+    .form-select {
+        font-size: 16px; // 防止 iOS Safari 縮放
+        padding: 0.5rem 0.75rem;
+    }
+
+    .form-control-sm {
+        font-size: 14px;
+        padding: 0.375rem 0.5rem;
+    }
+}
+
+// Badge 狀態樣式優化
+.badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+
+    &.badge-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    &.badge-primary {
+        background-color: #0d6efd;
+        color: white;
+    }
+
+    &.badge-success {
+        background-color: #198754;
+        color: white;
+    }
+
+    &.badge-warning {
+        background-color: #ffc107;
+        color: #212529;
+    }
+
+    &.badge-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    i {
+        font-size: 0.7rem;
+    }
+}
+
+// TodoCard 狀態 badge 特別樣式
+.todo-card {
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.375rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+        i {
+            margin-right: 0.25rem;
+        }
+    }
+}

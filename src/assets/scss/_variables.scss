@@ -1,0 +1,24 @@
+// Bootstrap 5 自定義變數
+$primary: #2c5282;     // 深藍色
+$secondary: #64748b;   // 灰藍色
+$success: #2f855a;     // 深綠色
+$info: #3182ce;        // 中藍色
+$warning: #dd6b20;     // 暗橙色
+$danger: #c53030;      // 暗紅色
+$light: #f7fafc;       // 淺灰白
+$dark: #1a202c;        // 近黑色
+
+// 字體設定
+$font-family-sans-serif: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-size-base: 1rem;
+
+// 按鈕設定
+$btn-border-radius: 0.375rem;
+$btn-font-weight: 500;
+
+// 卡片設定
+$card-border-radius: 0.5rem;
+$card-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+// 模態框設定
+$modal-content-border-radius: 0.5rem;

@@ -1,0 +1,46 @@
+{
+  "name": "todolist-management",
+  "version": "1.0.0",
+  "description": "Full-stack TODO list application with Google Calendar integration",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "fix-indentation": "eslint . --ext .ts,.tsx,.js,.jsx --fix && prettier --write .",
+    "backend": "cd backend && npm run dev",
+    "install-all": "npm install && cd backend && npm install",
+    "start-all": "concurrently \"npm run backend\" \"npm run dev\" --names \"Backend,Frontend\" --prefix-colors \"blue,green\"",
+    "start-windows": "start \"Backend\" cmd /k \"npm run backend\" && start \"Frontend\" cmd /k \"npm run dev\""
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
+    "@types/react-datepicker": "^6.2.0",
+    "bootstrap": "^5.3.2",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-datepicker": "^8.4.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.0.4",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^8.35.0",
+    "@typescript-eslint/parser": "^8.35.0",
+    "concurrently": "^9.2.0",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^3.6.1",
+    "typescript": "^5.3.3"
+  }
+}
